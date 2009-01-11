@@ -24,4 +24,8 @@ SICP and Clojure.  I'm documenting them here as I go along.
     (cond ((= a 4) 6)               (cond (= a 4) 6
           ((= b 4) (+ 6 7 a))             (= b 4) (+ 6 7 a)
           (else 25))                      :else 25)
+    
+    (define (a-plus-abs-b a b)      (defn a-plus-abs-b [a b]
+      ((if (> b 0) + -) a b))         ((if (> b 0) + -) a b))
+
 
