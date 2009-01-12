@@ -1,0 +1,5 @@
+(define (a-plus-abs-b a b)
+  ((if (> b 0) + -) a b)
+
+The function uses a compound expression to determine which operator
+is to be used at run-time, based on the input arguments.

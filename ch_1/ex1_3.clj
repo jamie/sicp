@@ -14,18 +14,19 @@
 (defn sum-of-squares [a b]
   (+ (square a) (square b)))
 
-; cheating, using knowledge I shouldn't have yet :P
+; cheating with empty? and list manipulation
 (defn two-max-helper [max next-max list]
-  (cond (empty? list) [max next-max]
-        :else (cond (> (first list) max)      (two-max-helper (first list) max (rest list))
-                    (> (first list) next-max) (two-max-helper max (first list) (rest list))
-                    :else                     (two-max-helper max next-max (rest list)))))
+  (if (empty? list)
+      [max next-max]
+      (cond (> (first list) max)      (two-max-helper (first list) max (rest list))
+            (> (first list) next-max) (two-max-helper max (first list) (rest list))
+            :else                     (two-max-helper max next-max (rest list)))))
 (defn two-max [list]
-  (cond (> (first list) (second list))
-          (two-max-helper (first list) (second list) (rest (rest list)))
-        :else
-          (two-max-helper (second list) (first list) (rest (rest list)))))
+  (if (> (first list) (second list))
+      (two-max-helper (first list) (second list) (rest (rest list)))
+      (two-max-helper (second list) (first list) (rest (rest list)))))
 
+; cheating with apply, map
 (defn sum-largest-squares [list]
   (apply + (map square (two-max list))))
 

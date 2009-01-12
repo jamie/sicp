@@ -1,0 +1,19 @@
+(define (p) (p))
+(define (test x y) (if (= x 0) 0 y))
+
+(test 0 (p))
+
+
+Normal order will translate (test 0 (p)) as so:
+
+    (if (= 0 0) 0 (p)))
+
+The test will return true, so will return 0.
+
+An applicative order translation will instead translate the
+call to p first, which will just become itself:
+
+    (test 0 (p))
+
+Then, there's an unbound p again, so we translate it again,
+and have an infinite loop in parsing the call.
