@@ -41,8 +41,11 @@
 (sqrt (square 1234567890987654))
 
 (defn good-enough? [guess x]
-  (< (abs (- (square guess) x)) 0.001))
+  (< (abs (- (square guess) x)) (* x 0.0000001)))
 
+0.000000001
 (sqrt (square 0.000000001))
+1234567890987654
 (sqrt (square 1234567890987654))
-;(sqrt (square 12345678909876543))
+1234567890987654321
+(sqrt (square 1234567890987654321))
