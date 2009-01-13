@@ -17,15 +17,27 @@ that will open up the Clojure REPL.
 There are some special form differences between the scheme presented in
 SICP and Clojure.  I'm documenting them here as I go along.
 
-    Scheme                          Clojure
+    Scheme                                Clojure
+                                          
+    (define a 3)                          (def a 3)
+                                          
+    (cond ((= a 4) 6)                     (cond (= a 4) 6
+          ((= b 4) (+ 6 7 a))                   (= b 4) (+ 6 7 a)
+          (else 25))                            :else 25)
+                                          
+    (define (a-plus-abs-b a b)            (defn a-plus-abs-b [a b]
+      ((if (> b 0) + -) a b))               ((if (> b 0) + -) a b))
+                                          
+                                          ; The JVM doesn't automatically support
+                                          ; tail-call optimization, so Clojure
+                                          ; provides a keyword to hint it
+    (defn sqrt-iter [guess x]             (defn sqrt-iter [guess x]
+      (if (good-enough? guess x)            (if (good-enough? guess x)
+          guess                                 guess
+          (sqrt-iter (improve guess x)          (recur (improve guess x)
+                     x)))                              x)))             
     
-    (define a 3)                    (def a 3)
     
-    (cond ((= a 4) 6)               (cond (= a 4) 6
-          ((= b 4) (+ 6 7 a))             (= b 4) (+ 6 7 a)
-          (else 25))                      :else 25)
-    
-    (define (a-plus-abs-b a b)      (defn a-plus-abs-b [a b]
-      ((if (> b 0) + -) a b))         ((if (> b 0) + -) a b))
+
 
 
