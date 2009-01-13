@@ -1,0 +1,5 @@
+Because our scheme uses applicative substitution, all the parameters
+to my-if are evaluated before the function is called, causing infinite
+recursion on sqrt-iter while resolving the arguments.
+
+The built-in if is a special form so that it can be defined lazy.
