@@ -1,8 +1,12 @@
 # SICP Exercises
 
-Broken down by chapter, plain text responses in .txt files, scheme source
-in .ss files (tested with [PLT Scheme][]), clojure source in .clj files
+Root directories are the section in the text, filenames are exercise
+number. Plain text responses in .txt files, scheme source in .ss 
+files (tested with [PLT Scheme][]), clojure source in .clj files
 (tested with [Clojure][] v20081217).
+
+Also included are exerciese from the Instructor's Manual, prefixed
+with an 'M'.
 
 [PLT Scheme]: http://www.plt-scheme.org/
 [Clojure]: http://clojure.org/
