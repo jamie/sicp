@@ -10,3 +10,8 @@
 ; Write two definitions of true-false - one that uses if and one that
 ; uses cond.
 
+(defn true-false [val]
+  (if val 1 0))
+
+(= 1 (true-false (> 3 2)))
+(= 0 (true-false (and (> 3 2) (< 3 1))))
