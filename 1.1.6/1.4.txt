@@ -1,5 +1,9 @@
-(define (a-plus-abs-b a b)
-  ((if (> b 0) + -) a b)
+; Observe that our model of evaluation allows for combinations whose 
+; operators are compound expressions. Use this observation to describe the
+; behaviour of the following procedure:
+;
+; (def a-plus-abs-b [a b]
+;   ((if (> b 0) + -) a b))
 
-The function uses a compound expression to determine which operator
-is to be used at run-time, based on the input arguments.
+; (if (> b 0) + -) is a compound expression which returns the name of
+; the function to be performed on the arguments.
