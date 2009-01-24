@@ -9,7 +9,7 @@
 ; Design a square-root procedure that uses this kind of end test. Does this
 ; work better for small and large numbers?
 
-; Clojure builtin
+; Clojure builtins
 ;(defn abs [x]
 ;  (cond (< x 0) (- x)
 ;        :else x))
