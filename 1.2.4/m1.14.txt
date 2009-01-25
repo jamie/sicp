@@ -1,0 +1,23 @@
+; This exercise is the same as 1.26 from section 1.2.6 of the text, but
+; adapted to use fast-expt rather than expmod.
+
+; Louis Reasoner is having great difficulty with the numlt procedure he wrote
+; for the exercise above. No matter what argument n he gives it, it tells him
+; that n multiplications are required to raise something to the nth power
+; using fast-expt. Louis calls his friend Eva Lu Ator over to help. When they
+; examine Louis's code, they find that he has rewritten the fast-expt
+; procedure to use an explicit multiplication, rather than calling square:
+;
+;    (defn fast-expt [b n]
+;      (cond (= n 0) 1
+;            (even? n) (* (fast-expt b (/ n 2))
+;                         (fast-expt b (/ n 2)))
+;            :else (* b (fast-expt b (- n 1)))))
+;
+; His nmult procedure is based on this implementation. "I don't see what
+; difference that could make," says Louis. "I do." says Eva. "By writing the
+; procedure like that, you have transformed the O(log n) process into an
+; O(n) process." Explain.
+
+By not "re-using" the value computed by fast-expt inside square, the work
+that is supposed to be saved is being made redundant by re-computing values.

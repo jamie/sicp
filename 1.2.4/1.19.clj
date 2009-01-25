@@ -15,19 +15,39 @@
 ; procedure. Put this all together to complete the following procedure, which
 ; runs in a logarithmic number of steps:
 ;
-;    (define (fib n) 
-;      (fib-iter 1 0 0 1 n)) 
-;    (define (fib-iter a b p q count) 
-;      (cond ((= count 0) b) 
-;            ((even? count) 
-;             (fib-iter a 
-;                       b 
-;                       <??>      ; compute p' 
-;                       <??>      ; compute q' 
-;                       (/ count 2))) 
-;            (else (fib-iter (+ (* b q) (* a q) (* a p)) 
-;                            (+ (* b p) (* a q)) 
-;                            p 
-;                            q 
-;                            (- count 1))))) 
-;
+;    (defn fib [n]
+;      (defn fib-iter [a b p q count]
+;        (cond ((= count 0) b)
+;              ((even? count)
+;               (fib-iter a
+;                         b
+;                         <??>      ; compute p'
+;                         <??>      ; compute q'
+;                         (/ count 2)))
+;              (else (fib-iter (+ (* b q) (* a q) (* a p))
+;                              (+ (* b p) (* a q))
+;                              p
+;                              q
+;                              (- count 1)))))
+;      (fib-iter 1 0 0 1 n))
+
+(defn fib [n]
+  (defn fib-iter [a b p q count]
+    (cond (= count 0) b
+          (even? count) (recur a
+                               b
+                               p ; TODO
+                               q ; TODO
+                               (/ count 2))
+          :else (recur (+ (* b q) (* a q) (* a p))
+                       (+ (* b p) (* a q))
+                       p
+                       q
+                       (- count 1))))
+  (fib-iter 1 0 0 1 n))
+
+(fib 1)
+(fib 2)
+(fib 3)
+(fib 4)
+(fib 5)
