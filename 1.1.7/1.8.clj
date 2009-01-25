@@ -16,6 +16,10 @@
 ; change implementation of improve
 ; rename sqrt, sqrt-iter to curt, curt-iter
 
+(defn abs [x]
+  (cond (< x 0) (- x)
+        :else x))
+
 (defn cube [x]
   (* x x x))
 

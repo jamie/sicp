@@ -9,6 +9,13 @@
 ; or the discriminant are zero (but you may assume that a is always
 ; nonzero).
 
+(defn abs [x]
+  (cond (< x 0) (- x)
+        :else x))
+(defn square [x]
+  (* x x))
+(defn average [x y]
+  (/ (+ x y) 2))
 (defn improve [guess x]
   (average guess (/ x guess)))
 (defn good-enough? [guess x]
@@ -29,9 +36,9 @@
 (defn real-root? [a b c]
   (<= 0 (discriminant a b c)))
 
-(= true (real-root 1 0 0))
-(= true (real-root 1 0 -1))
-(= false (real-root 1 0 1))
+(= true (real-root? 1 0 0))
+(= true (real-root? 1 0 -1))
+(= false (real-root? 1 0 1))
 
 (defn real-part [a b c]
   (/ (- b) (* 2 a)))
@@ -54,7 +61,7 @@
       (min (abs (root-one a b c)) (abs (root-two a b c)))
       (real-part a b c)))
 
-; todo: some concrete examples with known answers to test with?
+; TODO: some concrete examples with known answers to test with?
 (smallest-real-part 1 0 0)
 (smallest-real-part 1 0 -1)
 (smallest-real-part 1 3 1)

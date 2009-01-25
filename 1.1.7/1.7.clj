@@ -9,18 +9,15 @@
 ; Design a square-root procedure that uses this kind of end test. Does this
 ; work better for small and large numbers?
 
-; Clojure builtins
-;(defn abs [x]
-;  (cond (< x 0) (- x)
-;        :else x))
+(defn abs [x]
+  (cond (< x 0) (- x)
+        :else x))
 
-; Clojure builtin
-;(defn square [x]
-;  (* x x))
+(defn square [x]
+  (* x x))
 
-; Clojure builtin
-;(defn average [x y]
-;  (/ (+ x y) 2))
+(defn average [x y]
+  (/ (+ x y) 2))
 
 (defn improve [guess x]
   (average guess (/ x guess)))

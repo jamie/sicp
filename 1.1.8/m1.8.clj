@@ -15,9 +15,12 @@
 ; embdedded power-iter, and explain why you could remove those
 ; parameters.
 
+(defn expt [a b]
+  (int (.pow Math a b)))
+
 (defn power-close-to [b n]
   (defn power-iter [e]
-    (if (> (** b e) n)
+    (if (> (expt b e) n)
         e
         (recur (+ e 1))))
 
