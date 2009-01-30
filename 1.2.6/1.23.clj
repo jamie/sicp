@@ -12,3 +12,5 @@
 ; Is this expectation confirmed? If not, what is the observed ratio of the
 ; speeds of the two algorithms, and how do you explain the fact that it is
 ; different from 2?
+
+; TODO
