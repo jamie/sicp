@@ -17,9 +17,9 @@
         (fib-iter (+ a b) a (- count 1))))
   (fib-iter 1 0 n))
 
-(= 3 (fib 4))
-(= 55 (fib 10))
-(= 610 (fib 15))
+(assert (= 3 (fib 4)))
+(assert (= 55 (fib 10)))
+(assert (= 610 (fib 15)))
 
 ; Cannot remove any parameters from fib-iter, because none stay constant
 ; between calls

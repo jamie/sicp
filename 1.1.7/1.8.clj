@@ -28,8 +28,13 @@
         (* guess 2))
      3))
 
+(defn close?
+  ([x y] (close? x y 0.0000001))
+  ([x y tolerance]
+    (< (abs (- x y)) tolerance)))
+
 (defn good-enough? [guess x]
-  (< (abs (- (cube guess) x)) (* x 0.0000001)))
+  (close? (cube guess) x (* x 0.0000001)))
 
 (defn curt-iter [guess x]
   (if (good-enough? guess x)
@@ -40,9 +45,6 @@
 (defn curt [x]
   (curt-iter 1.0 x))
 
-3.0
-(curt (cube 3.0))
-123.005
-(curt (cube 123.005))
-0.0098
-(curt (cube 0.0098))
+(assert (close? 3.0     (curt (cube 3.0))))
+(assert (close? 123.005 (curt (cube 123.005))))
+(assert (close? 0.0098  (curt (cube 0.0098))))

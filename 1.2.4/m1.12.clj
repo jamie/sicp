@@ -18,6 +18,6 @@
         (recur (- counter 1) (* b product))))
   (expt-iter n 1))
 
-(expt 2 10)
+(assert (= 1024 (expt 2 10)))
 
 ; We can remove b, as it remains unchanged between calls to expt-iter.

@@ -17,6 +17,6 @@
           :else (find-divisor n (+ test 1))))
   (find-divisor n 2))
 
-(smallest-divisor 199)
-(smallest-divisor 1999)
-(smallest-divisor 19999)
+(assert (= 199  (smallest-divisor 199)))
+(assert (= 1999 (smallest-divisor 1999)))
+(assert (= 7    (smallest-divisor 19999)))

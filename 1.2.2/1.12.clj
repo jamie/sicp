@@ -15,13 +15,16 @@
         :else (+ (pascal (- row 1) col) 
                  (pascal (- row 1) (- col 1)))))
 
-(= 1 (pascal 1 1))
-(= 1 (pascal 2 1))
-(= 1 (pascal 2 2))
-(= 1 (pascal 3 1))
-(= 2 (pascal 3 2))
-(= 1 (pascal 3 3))
-(= 1 (pascal 4 1))
-(= 3 (pascal 4 2))
-(= 3 (pascal 4 3))
-(= 1 (pascal 4 4))
+(assert (= 1 (pascal 1 1)))
+
+(assert (= 1 (pascal 2 1)))
+(assert (= 1 (pascal 2 2)))
+
+(assert (= 1 (pascal 3 1)))
+(assert (= 2 (pascal 3 2)))
+(assert (= 1 (pascal 3 3)))
+
+(assert (= 1 (pascal 4 1)))
+(assert (= 3 (pascal 4 2)))
+(assert (= 3 (pascal 4 3)))
+(assert (= 1 (pascal 4 4)))

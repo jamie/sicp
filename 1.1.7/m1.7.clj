@@ -11,7 +11,7 @@
 ;   1024
 
 (defn expt [a b]
-  (int (.pow Math a b)))
+  (int (Math/pow a b)))
 
 (defn power-iter [b n e]
   (if (< n (expt b e))
@@ -21,4 +21,4 @@
 (defn power-close-to [b n]
   (power-iter b n 1))
 
-(= 10 (power-close-to 2 1000))
+(assert (= 10 (power-close-to 2 1000)))

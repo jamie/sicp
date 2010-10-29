@@ -1,22 +1,27 @@
 # SICP Exercises
 
-Root directories are the section in the text, filenames are exercise
-number. Plain text responses in .txt files, scheme source in .ss 
-files (tested with [PLT Scheme][]), clojure source in .clj files
-(tested with [Clojure][] v20081217).
+The full text of the book is available [online][]. I'm also working
+through problems presented in the [instructor's manual][], whose
+problems are prefixed with an M.
 
-Also included are exerciese from the Instructor's Manual, prefixed
-with an 'M'.
+[online]: http://mitpress.mit.edu/sicp/full-text/book/book.html
+[instructor's manual]: http://mitpress.mit.edu/catalog/item/default.asp?ttype=2&tid=3849
+
+I'm planning on working through solutions in a number of lisp dialects
+(and perhaps other languages as well). Solutions are grouped by
+section and type (based on the file extension).
+
+.txt are plain text solutions to essay questions.
+
+.ss are Scheme files, run through [PLT Scheme][].
+
+.clj are [Clojure][] solutions, using Clojure 1.2. Assertions are
+included, and will raise an error if the assertion does not pass.
 
 [PLT Scheme]: http://www.plt-scheme.org/
 [Clojure]: http://clojure.org/
 
-# Support Files
-
-I've included clojure.jar, v20081217, and a simple wrapper bash script
-that will open up the Clojure REPL.
-
-# Notes
+# Clojure Notes
 
 There are some special form differences between the scheme presented in
 SICP and Clojure.  I'm documenting them here as I go along.
@@ -41,7 +46,8 @@ SICP and Clojure.  I'm documenting them here as I go along.
           (sqrt-iter (improve guess x)          (recur (improve guess x)
                      x)))                              x)))             
     
-    
-
-
+                                          ; A number of mathy builtins
+                                          ; provided by Java's Math class.
+                                          ; To call them, use Class/method
+                                          (assert (= 8 (Math/pow 2 3)))
 

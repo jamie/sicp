@@ -16,7 +16,7 @@
 ; parameters.
 
 (defn expt [a b]
-  (int (.pow Math a b)))
+  (int (Math/pow a b)))
 
 (defn power-close-to [b n]
   (defn power-iter [e]
@@ -26,4 +26,4 @@
 
   (power-iter 1))
 
-(= 10 (power-close-to 2 1000))
+(assert (= 10 (power-close-to 2 1000)))

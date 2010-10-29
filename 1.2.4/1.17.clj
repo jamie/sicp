@@ -30,5 +30,5 @@
         (even? y) (doubled (fast-mul x (halve y)))
         :else (+ x (fast-mul x (- y 1)))))
 
-(fast-mul 5 7)
-(fast-mul 10 10)
+(assert (= 35  (fast-mul 5 7)))
+(assert (= 100 (fast-mul 10 10)))

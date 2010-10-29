@@ -7,5 +7,7 @@
 
 (defn loopy [] (loopy))
 
-(and false (loopy))
-(or true (loopy))
+(assert (= false (and false (loopy))))
+(assert (= (or true (loopy))))
+
+; TODO: I'm not sure this is exactly what the question is asking

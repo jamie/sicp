@@ -13,5 +13,5 @@
 (defn true-false [val]
   (if val 1 0))
 
-(= 1 (true-false (> 3 2)))
-(= 0 (true-false (and (> 3 2) (< 3 1))))
+(assert (= 1 (true-false (> 3 2))))
+(assert (= 0 (true-false (and (> 3 2) (< 3 1)))))

@@ -8,8 +8,8 @@
 ; Fib(n) = {  1                   if n = 1
 ;             Fib(n-1) + Fib(n-2) otherwise
 
-(defn ** [n e] (.pow Math n e))
-(defn sqrt [n] (.sqrt Math n))
+(defn ** [n e] (Math/pow n e))
+(defn sqrt [n] (Math/sqrt n))
 (def phi (/ (+ 1 (sqrt 5)) 2))
 (def psi (/ (- 1 (sqrt 5)) 2))
 

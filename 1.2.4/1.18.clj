@@ -16,5 +16,5 @@
             (recur (+ i a) a (- b 1)))))
   (iter 0 a b))
 
-(mul 5 7)
-(mul 10 10)
+(assert (= 35  (mul 5 7)))
+(assert (= 100 (mul 10 10)))

@@ -7,8 +7,8 @@
         (< val 0) -1
         :else 0))
 
-(= 1 (sign 10))
-(= 1 (sign 1))
-(= 0 (sign 0))
-(= -1 (sign -1))
-(= -1 (sign -10))
+(assert (= 1 (sign 10)))
+(assert (= 1 (sign 1)))
+(assert (= 0 (sign 0)))
+(assert (= -1 (sign -1)))
+(assert (= -1 (sign -10)))

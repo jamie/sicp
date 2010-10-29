@@ -6,6 +6,9 @@
         (and (< b a) (< b c)) (+ (* a a) (* c c))
         (and (< c a) (< c b)) (+ (* a a) (* b b))))
 
-(sum-largest-squares 1 2 3)
-(sum-largest-squares 2 3 1)
-(sum-largest-squares 3 1 2)
+(assert (= 13 (sum-largest-squares 1 2 3)))
+(assert (= 13 (sum-largest-squares 1 3 2)))
+(assert (= 13 (sum-largest-squares 2 1 3)))
+(assert (= 13 (sum-largest-squares 2 3 1)))
+(assert (= 13 (sum-largest-squares 3 1 2)))
+(assert (= 13 (sum-largest-squares 3 2 1)))

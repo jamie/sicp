@@ -36,7 +36,7 @@
                        kinds-of-coins))))
   (cc amount 5))
 
-(= 292 (count-change 100))
+(assert (= 292 (count-change 100)))
 
 ; No, values of both amount and kinds-of-coins change between calls to cc,
 ; and kinds-of-coins is variable in calls to first-denomination.

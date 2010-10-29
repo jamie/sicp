@@ -18,8 +18,9 @@
             (recur (* a b) b (- e 1)))))
   (exp-iter 1 b n))
 
-(exp 2 2)
-(exp 2 3)
-(exp 2 4)
+(assert (= 4  (exp 2 2)))
+(assert (= 8  (exp 2 3)))
+(assert (= 16 (exp 2 4)))
 
-(exp 2 10)
+(assert (= 1024 (exp 2 10)))
+(assert (= 100 (exp 10 2)))
