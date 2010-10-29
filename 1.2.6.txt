@@ -1,3 +1,19 @@
+;;; 1.25
+
+; Alyssa P. Hacker complains that we went to a lot of extra work in writing
+; expmod. After all, she says, since we already know how to compute
+; exponentials, we could have simply written
+;
+;    (define (expmod base exp m) 
+;      (remainder (fast-expt base exp) m)) 
+;
+; Is she correct? Would this procedure serve as well for our fast prime
+; tester? Explain.
+
+; TODO
+
+;;; 1.26
+
 ; Louis Reasoner is having great difficulty doing exercise 1.24. His
 ; fast-prime? test seems to run more slowly than his prime? test. Louis
 ; calls his friend Eva Lu Ator over to help. When they examine Louis's

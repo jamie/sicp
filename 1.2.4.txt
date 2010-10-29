@@ -1,3 +1,5 @@
+;; M 1.14
+
 ; This exercise is the same as 1.26 from section 1.2.6 of the text, but
 ; adapted to use fast-expt rather than expmod.
 

@@ -1,3 +1,30 @@
+;;; M 1.1
+
+(* (+ 2 2)   5)
+; 20
+
+(* (+ 2 2) (5))
+; error: 5 is not a function
+
+(*(+(2 2) 5))
+; error: 2 is not a function
+
+(*(+ 2
+  2)5)
+; 20
+
+(5 * 4)
+; error: 5 is not a function
+
+(5 * (2 + 2))
+; error: 5 is not a function
+
+((+ 2 3))
+; error: 5 is not a function
+
+
+;;; M 1.2
+
 ; Use the evaluation rule of section 1.1.3 to describe the process of
 ; evaluating the expression (* pi (* radius radius)) from section 1.1.2
 
