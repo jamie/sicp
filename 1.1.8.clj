@@ -1,3 +1,5 @@
+;;; IM 1.8
+
 ; The following procedure power-close-to finds the smallest power of its
 ; first argument that is greater than its second argument. (This is a 
 ; solution to an exercise in manual section 1.1.7.)
