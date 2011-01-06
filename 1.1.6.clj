@@ -73,3 +73,11 @@
 
 (assert (= 1 (true-false (> 3 2))))
 (assert (= 0 (true-false (and (> 3 2) (< 3 1)))))
+
+(defn true-false2 [val]
+  (cond val 1
+	:else 0))
+
+(assert (= 1 (true-false2 (> 3 2))))
+(assert (= 0 (true-false2 (and (> 3 2) (< 3 1)))))
+
