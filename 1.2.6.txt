@@ -4,8 +4,8 @@
 ; expmod. After all, she says, since we already know how to compute
 ; exponentials, we could have simply written
 ;
-;    (define (expmod base exp m) 
-;      (remainder (fast-expt base exp) m)) 
+;    (define (expmod base exp m)
+;      (remainder (fast-expt base exp) m))
 ;
 ; Is she correct? Would this procedure serve as well for our fast prime
 ; tester? Explain.
@@ -32,4 +32,9 @@
 ; Eva. "By writing the procedure like that, you have transformed the
 ; O(log n) process into a O(n) process." Explain. 
 
-; TODO
+The savings from the even/odd split of the last two cases of the cond
+are due to the reduction of expmod calls. By removing the call to square
+Louis' code is doing the same number of expmod calls as a naive
+solution but additionally has more cases to check in the cond, resulting
+in slightly more work being done.
+

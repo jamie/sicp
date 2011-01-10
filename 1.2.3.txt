@@ -23,7 +23,24 @@
 ;    (defn count-change [amount]
 ;      (cc amount 5))
 
-; TODO
+(count-change 11)
+(cc 11 5)
+(cc 11 4)
+(cc 11 3)
+(+ (cc 11 2) (cc 1 3))
+(+ (cc 11 2) (cc 1 2))
+(+ (cc 11 2) (cc 1 1))
+(+ (cc 11 2) (+ (cc 1 0) (cc 0 1)))
+(+ (cc 11 2) (+ (cc 1 0) 1))
+(+ (cc 11 2) (+ 0 1))
+(+ (cc 11 2) 1)
+(+ (+ (cc 11 1) (cc 6 2)) 1)
+; TODO: more expansion
+
+; Storage use is linear on amount, the final + will add n numbers,
+; accumulted one at a time.
+
+; Time taken is possibly exponential on amount? TODO: confirm
 
 ;;; 1.15
 
